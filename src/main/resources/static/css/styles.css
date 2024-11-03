@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+table {
+    font-family: Calibri, serif;
+    font-size: 14px;
+    font-weight: normal;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+thead td {
+    color: #fff;
+    background: #903;
+    border-color: #b6003d;
+    text-decoration: underline
+}
+
+table td {
+    border: 1px solid #d0c2a5;
+    padding: 6px 8px;
+}
+
+tbody {
+    counter-reset: schetchik;
+}
+
+tbody tr td:first-child:before {
+    content: counter(schetchik);
+    counter-increment: schetchik;
+}
+
+tbody td {
+    text-align: left;
+}
+
+.right{
+    text-align: right;
+}
+
+.incr {
+    text-align: right;
+}

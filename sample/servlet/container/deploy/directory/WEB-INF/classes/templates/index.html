@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/css/styles.css}" rel="stylesheet"/>
+    <title>Title</title>
+</head>
+<body>
+
+    <table>
+        <thead>
+            <tr class="tablehead">
+                <td>№</td>
+                <td>Банк/филиал</td>
+                <td>БИК</td>
+                <td>БИК головного банка</td>
+                <td>Условный номер участника расчетов</td>
+                <td>Статус БИК</td>
+                <td>Наименование банка/филиала</td>
+                <td>Населенный пункт</td>
+                <td>Код контроля</td>
+                <td>Дата контроля</td>
+                <td>БИК приемника</td>
+                <td>Дата начала действия записи</td>
+                <td>Дата окончания действия записи</td>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr th:each="bank: ${banks}">
+                <td class="incr"></td>
+                <td><span th:text="${bank.getTyp()}"></span></td>
+                <td><span th:text="${bank.getCDBank()}"></span></td>
+                <td><span th:text="${bank.getCDHeadBank()}"></span></td>
+                <td class="right"><span th:text="${bank.getNrBank()}"></span></td>
+                <td class="right"><span th:text="${bank.getBICStatus()}"></span></td>
+                <td><span th:text="${bank.getNmBankShort()}"></span></td>
+                <td><span th:text="${bank.getAdrBank()}"></span></td>
+                <td><span th:text="${bank.getCdControl()}"></span></td>
+                <td><span th:text="${bank.getDtControl()}"></span></td>
+                <td><span th:text="${bank.getCdBankSuccessor()}"></span></td>
+                <td><span th:text="${bank.getDTBegin()}"></span></td>
+                <td><span th:text="${bank.getDtEnd()}"></span></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
